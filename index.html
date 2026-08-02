@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KFY4BX28ZJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KFY4BX28ZJ');
+</script>
+
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EZvSeeBox App Guide</title>
 <style>
@@ -104,7 +113,15 @@ body{background:var(--bg);color:var(--txt);font-family:"Segoe UI",system-ui,sans
   .hdr-inner{grid-column:1/-1;grid-row:2;}
   .vsb-cs{height:52px;grid-column:2;grid-row:1;justify-self:center;}
   .tb{font-size:11px;padding:3px 10px;}
-  .grid{grid-template-columns:1fr;padding:10px 12px;}
+  .grid{grid-template-columns:repeat(3,1fr);padding:8px 8px;gap:6px;}
+  .card{padding:8px;gap:5px;}
+  .app-icon{width:56px;height:56px;}
+  .app-icon-lg{width:68px;height:62px;}
+  .app-name{font-size:11px;}
+  .content-line{font-size:9px;padding:4px 6px;}
+  .dbadge{font-size:8px;padding:1px 5px;}
+  .feat{font-size:8px;padding:1px 5px;}
+  .notes{font-size:9px;}
   .ctrl-bar{flex-direction:column;padding:10px 12px;gap:10px;}
   .controls{width:100%;}
   .search{max-width:100%;width:100%;}
@@ -125,7 +142,7 @@ body{background:var(--bg);color:var(--txt);font-family:"Segoe UI",system-ui,sans
 </div>
 <div class="ctrl-bar">
   <div class="controls">
-    <input class="search" type="text" placeholder="🔍 Search apps..." oninput="filter()" id="q">
+    <input class="search" type="text" placeholder="Search apps, category, models, glossary..." oninput="filter()" id="q">
     <div class="filters">
       <button class="fb on fall" onclick="setF('all',this)">All</button>
       <div class="fgroups">
