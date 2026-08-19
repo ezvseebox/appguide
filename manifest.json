@@ -1,0 +1,8 @@
+{
+  "name": "EZ vSeeBox App Guide",
+  "short_name": "App Guide",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0a0010",
+  "theme_color": "#9933ff"
+}
