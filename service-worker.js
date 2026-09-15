@@ -1,4 +1,4 @@
-const CACHE = 'vsb-app-guide-v1';
+const CACHE = 'vsb-app-guide-v2';
 const FILES = ['./'];
 
 self.addEventListener('install', e => {
@@ -6,7 +6,14 @@ self.addEventListener('install', e => {
   self.skipWaiting();
 });
 
-self.addEventListener('activate', e => { self.clients.claim(); });
+self.addEventListener('activate', e => {
+  e.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
+    )
+  );
+  self.clients.claim();
+});
 
 self.addEventListener('fetch', e => {
   e.respondWith(
